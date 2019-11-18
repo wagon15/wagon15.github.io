@@ -22,10 +22,23 @@ body{
     font-size: 1.6rem; // Sets back to 16px
     font-family: Catamaran, Helvetica, Arial, sans-serif;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 /*
 ============== BEM ==============
 */
-
+/*
+============================
+Landing section
+============================
+*/
 .landing-section {
     //Position
 
@@ -35,7 +48,7 @@ body{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     // Typography
     color: $text-primary;
@@ -55,7 +68,7 @@ body{
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
 
         width: 80%;
         min-height: 30%;
@@ -69,36 +82,36 @@ body{
         padding: 1rem 2rem;
         max-width: 10rem;
 
-        color: $text-primary;
         letter-spacing: .1rem;
-        text-decoration: none;
         border: .2rem solid $text-primary;
         border-radius: 3rem;
     }
 
     &__avatar {
         order: 2;
-        max-height: 50%;
+        max-height: 40%;
         max-width: 80%;
         border-radius: 50%;
         box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
     }
-
+    // Needs to be finished
     &__scroll-icon{
         position: fixed;
         bottom: 1rem;
     }
 }
+/*
+============================
+Nav bar section
+============================
+*/
 
 .nav-bar{
     position: sticky;
     top: 0;
 
-    min-height: 2rem;
-
-    font-size: 1.5em;
     font-weight: bold;
-
+    font-size: 1.4em;
 
     color: $text-primary;
     background-image: $landing-background;
@@ -111,50 +124,58 @@ body{
         
         display: flex;
         flex-direction: row;
-        align-content: space-between;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center
     }
 
     & p {
         display: inline-block;
         text-shadow: 3px 4px 1px rgba(0, 0, 0, 0.5);
-        margin-left: 1rem;
-        margin-right: auto;
+        margin: 1rem;
     }
 
     &__btn-primary {
         margin-right: 1rem;
-        padding: 1rem 2rem;
-
+        width: 5em;
+        height: 1.5em;
 
         color: $text-primary;
         font-weight: bold;
         letter-spacing: .1rem;
-
 
         border: .1rem solid $text-primary;
         border-radius: 1rem;
         background-color: transparent;
     }
 
+    $number-of-links: 3;
+
     &__links {
-        //position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        padding-left: 1em;
+
+        height: $number-of-links * 2em;
 
         &--hidden {
             display: none;
         }
+
+    }
+
+    &__link {
+        display: block;
+
+        &:hover,
+        &:active{
+            color: $background-primary;
+        }
     }
 }
 
-.men-icon {
-    span{
-        display: inline-block;
-        width: 35px;
-        height: 5px;
-        background-color: black;
-        margin: 6px 0;
-    }
-}
+
 
 img {
     max-width: 100%;
