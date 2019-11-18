@@ -10,6 +10,7 @@ $gradient-secondary: #7b4397;
 $background-primary: #fdcc52;
 $background-footer: #222222;
 $landing-background:  url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4c4c4' fill-opacity='0.17'%3E%3Cpath d='M84 23c-4.417 0-8-3.584-8-7.998V8h-7.002C64.58 8 61 4.42 61 0H23c0 4.417-3.584 8-7.998 8H8v7.002C8 19.42 4.42 23 0 23v38c4.417 0 8 3.584 8 7.998V76h7.002C19.42 76 23 79.58 23 84h38c0-4.417 3.584-8 7.998-8H76v-7.002C76 64.58 79.58 61 84 61V23zM59.05 83H43V66.95c5.054-.5 9-4.764 9-9.948V52h5.002c5.18 0 9.446-3.947 9.95-9H83v16.05c-5.054.5-9 4.764-9 9.948V74h-5.002c-5.18 0-9.446 3.947-9.95 9zm-34.1 0H41V66.95c-5.053-.502-9-4.768-9-9.948V52h-5.002c-5.184 0-9.447-3.946-9.95-9H1v16.05c5.053.502 9 4.768 9 9.948V74h5.002c5.184 0 9.447 3.946 9.95 9zm0-82H41v16.05c-5.054.5-9 4.764-9 9.948V32h-5.002c-5.18 0-9.446 3.947-9.95 9H1V24.95c5.054-.5 9-4.764 9-9.948V10h5.002c5.18 0 9.446-3.947 9.95-9zm34.1 0H43v16.05c5.053.502 9 4.768 9 9.948V32h5.002c5.184 0 9.447 3.946 9.95 9H83V24.95c-5.053-.502-9-4.768-9-9.948V10h-5.002c-5.184 0-9.447-3.946-9.95-9zM50 50v7.002C50 61.42 46.42 65 42 65c-4.417 0-8-3.584-8-7.998V50h-7.002C22.58 50 19 46.42 19 42c0-4.417 3.584-8 7.998-8H34v-7.002C34 22.58 37.58 19 42 19c4.417 0 8 3.584 8 7.998V34h7.002C61.42 34 65 37.58 65 42c0 4.417-3.584 8-7.998 8H50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right, $gradient-primary, $gradient-secondary);
+$section-width-mobile: 85%;
     
 /*
 ============== Global ==============
@@ -17,15 +18,19 @@ $landing-background:  url("data:image/svg+xml,%3Csvg width='84' height='84' view
 :root{
     font-size: 62.5%; // Sets 1rem to 10px in default 16px case
 }
+
 body{
     font-size: 160%; // In case of no rem support
     font-size: 1.6rem; // Sets back to 16px
     font-family: Catamaran, Helvetica, Arial, sans-serif;
+    color: $text-secondary;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -70,7 +75,7 @@ Landing section
         align-items: center;
         justify-content: center;
 
-        width: 80%;
+        width: $section-width-mobile;
         min-height: 30%;
         text-align: center;
         
@@ -90,7 +95,7 @@ Landing section
     &__avatar {
         order: 2;
         max-height: 40%;
-        max-width: 80%;
+        max-width: $section-width-mobile;
         border-radius: 50%;
         box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
     }
@@ -107,8 +112,11 @@ Nav bar section
 */
 
 .nav-bar{
+    $border-size: .2rem;
+
     position: sticky;
-    top: 0;
+    top: -$border-size;
+    z-index: 1;
 
     font-weight: bold;
     font-size: 1.4em;
@@ -119,8 +127,8 @@ Nav bar section
     box-shadow: 0 5px 5px 2px rgba(0,0,0,0.5);
 
     &__top {
-        border-top: .2rem solid $text-primary;
-        border-bottom: .2rem solid $text-primary;
+        border-top: $border-size solid $text-primary;
+        border-bottom: $border-size solid $text-primary;
         
         display: flex;
         flex-direction: row;
@@ -175,7 +183,169 @@ Nav bar section
     }
 }
 
+/*
+============================
+Expierience section
+============================
+*/
+$corner-height: 100px;
+.expierience-section {
+    position: relative; // For svg positioning
 
+    padding-bottom: $corner-height;
+
+    text-align: center;
+
+    background-color: $background-primary;
+
+    & div {
+        width: $section-width-mobile;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__header {
+
+        font-size: 2.5em;
+        margin: 0;
+        padding-top: 2em;
+        margin-bottom: 3rem;
+    }
+
+    &__red-text {
+        color: $text-tertiary;
+
+        &--no-bottom-margin {
+            margin-bottom: 0;
+        }
+    }
+
+    &__corner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $corner-height;
+    }
+}
+
+.tools-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    &__item {
+        display: inline-block;
+        width: 4.5em;
+        margin-bottom: 1em;
+    }
+
+    &__logo{
+        height: 3em;
+        display: block;
+        margin: .3em auto;
+    }
+}
+
+/*
+============================
+Projects section
+============================
+*/
+
+.projects-section {
+    width: $section-width-mobile;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+    &__header {
+        @extend .expierience-section__header;
+
+        &--no-top-padding{
+            padding-top: 0;
+        }
+    }
+
+    &__red-text{
+        @extend .expierience-section__red-text;
+    }
+
+}
+
+.project-tile {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    &:after{
+        $separator-height: .2em;
+
+        content: '';
+        display: block;
+        background-color: $text-secondary;
+        width: 100%;
+        height: $separator-height;
+        border-radius: $separator-height;
+    }
+
+    &__project-image {
+        width: 100%;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & h3 {
+            margin: 0;
+        }
+    }
+
+    &__project-logo {
+        height: 2em;
+        margin-left: 1em;
+    }
+
+    &__red-text {
+        @extend .expierience-section__red-text;
+    }
+
+    & h4 { 
+        text-align: left;
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: baseline;
+    }
+
+    &__list-item {
+        display: inline-block;
+        width: 2.5em;
+    }
+
+    &__btn-secondary {
+        display: inline-block;
+
+        margin: 1em;
+        padding: .4em 2em;
+        max-width: 10em;
+
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+
+        border: .2rem solid $text-secondary;
+        border-radius: 3em;
+    }
+}
 
 img {
     max-width: 100%;

@@ -12,6 +12,7 @@ body {
   font-size: 160%;
   font-size: 1.6rem;
   font-family: Catamaran, Helvetica, Arial, sans-serif;
+  color: #212529;
 }
 
 a {
@@ -92,7 +93,7 @@ Landing section
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 80%;
+  width: 85%;
   min-height: 30%;
   text-align: center;
 }
@@ -112,7 +113,7 @@ Landing section
       -ms-flex-order: 2;
           order: 2;
   max-height: 40%;
-  max-width: 80%;
+  max-width: 85%;
   border-radius: 50%;
   -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
@@ -131,7 +132,8 @@ Nav bar section
 .nav-bar {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: -0.2rem;
+  z-index: 1;
   font-weight: bold;
   font-size: 1.4em;
   color: #ffffff;
@@ -213,12 +215,177 @@ Nav bar section
   color: #fdcc52;
 }
 
-.men-icon span {
+/*
+============================
+Expierience section
+============================
+*/
+.expierience-section {
+  position: relative;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: #fdcc52;
+}
+
+.expierience-section div {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expierience-section__header, .projects-section__header {
+  font-size: 2.5em;
+  margin: 0;
+  padding-top: 2em;
+  margin-bottom: 3rem;
+}
+
+.expierience-section__red-text, .projects-section__red-text, .project-tile__red-text {
+  color: #dc2430;
+}
+
+.expierience-section__red-text--no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.expierience-section__corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.tools-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.tools-list__item {
   display: inline-block;
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
+  width: 4.5em;
+  margin-bottom: 1em;
+}
+
+.tools-list__logo {
+  height: 3em;
+  display: block;
+  margin: .3em auto;
+}
+
+/*
+============================
+Projects section
+============================
+*/
+.projects-section {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.projects-section__header--no-top-padding {
+  padding-top: 0;
+}
+
+.project-tile {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.project-tile:after {
+  content: '';
+  display: block;
+  background-color: #212529;
+  width: 100%;
+  height: 0.2em;
+  border-radius: 0.2em;
+}
+
+.project-tile__project-image {
+  width: 100%;
+}
+
+.project-tile__container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-tile__container h3 {
+  margin: 0;
+}
+
+.project-tile__project-logo {
+  height: 2em;
+  margin-left: 1em;
+}
+
+.project-tile h4 {
+  text-align: left;
+}
+
+.project-tile__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.project-tile__list-item {
+  display: inline-block;
+  width: 2.5em;
+}
+
+.project-tile__btn-secondary {
+  display: inline-block;
+  margin: 1em;
+  padding: .4em 2em;
+  max-width: 10em;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  border: 0.2rem solid #212529;
+  border-radius: 3em;
 }
 
 img {
