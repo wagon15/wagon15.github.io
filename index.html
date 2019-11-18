@@ -12,65 +12,76 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <header>
-        <p>Wojciech Pęciak</p>
-        <nav>
-            <button>Menu</button>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
-        <section id="about">
-            <h1>Hi, I'm Wojtek!</h1>
-            <p>I'm web developer from Poland, starting with focus on front-end, but aiming to become full-stack developer. 
-                Feel free to check out my projects down below.
-                I am currently looking for an entry level position or an internship.
-            </p>
-            <a href="http://www.google.com">resume</a>
-            <div>scroll down</div>
-            <section>
-                <h2>What do I use?</h2>
-                <p>I have expierience in the following tools and technologies:</p>
+        <section id="about" class="landing-section">
+            <h1 class="landing-section__header">Hi, I'm Wojtek!</h1>
+            <div class="landing-section__description">
+                <p>Web developer from Poland, focused on front-end, but aiming to become full-stack developer. 
+                    Feel free to check out my projects down below.
+                    I'm currently looking for an entry level position or an internship.
+                </p>
+                <a class="landing-section__btn-primary" href="http://www.google.com">resume</a>
+            </div>
+            <img class="landing-section__avatar" src="./media/profil.jpg" alt="Wojciech Pęciak in formal outfit">
+            <div class="landing-section__scroll-icon">scroll down</div>
+        </section>
+        <div class="nav-bar">
+            <div class="nav-bar__top">
+                <p>Wojciech Pęciak</p>
+                <button class="nav-bar__btn-primary">Menu
+                    <span class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+            <nav class="nav-bar__links av-bar__links--hidden">
                 <ul>
-                    <li>
-                        <img src="./media/html5_red.png" alt="HTML5">
-                        <p>HTML5</p>
-                    </li>
-                    <li>
-                        <img src="./media/css-3.png" alt="CSS3">
-                        <p>CSS3</p>
-                    </li>
-                    <li>
-                        <img src="./media/js_512x512.png" alt="JavaScript">
-                        <p>JavaScript</p>
-                    </li>
-                    <li>
-                        <img src="./media/sass.png" alt="Sass">
-                        <p></p>
-                    </li>
-                    <li>
-                        <img src="./media/react_512x512.png" alt="React">
-                        <p>React</p>
-                    </li>
-                    <li>
-                        <img src="./media/adobeXd.png" alt="Adobe Xd">
-                        <p>Adobe Xd</p>
-                    </li>
-                    <li>
-                        <img src="./media/git_512x512.png" alt="Git">
-                        <p>Git</p>
-                    </li>
-                    <li>
-                        <img src="./media/nodejs.png" alt="Node.js">
-                        <p>Node.js</p>
-                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <p>Currently learning Sass</p>
-            </section>
+            </nav>
+        </div>
+        <section>
+            <h2>What do I use?</h2>
+            <p>I have expierience in the following tools and technologies:</p>
+            <ul>
+                <li>
+                    <img src="./media/html5_red.png" alt="HTML5">
+                    <p>HTML5</p>
+                </li>
+                <li>
+                    <img src="./media/css-3.png" alt="CSS3">
+                    <p>CSS3</p>
+                </li>
+                <li>
+                    <img src="./media/js_512x512.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </li>
+                <li>
+                    <img src="./media/sass.png" alt="Sass">
+                    <p></p>
+                </li>
+                <li>
+                    <img src="./media/react_512x512.png" alt="React">
+                    <p>React</p>
+                </li>
+                <li>
+                    <img src="./media/adobeXd.png" alt="Adobe Xd">
+                    <p>Adobe Xd</p>
+                </li>
+                <li>
+                    <img src="./media/git_512x512.png" alt="Git">
+                    <p>Git</p>
+                </li>
+                <li>
+                    <img src="./media/nodejs.png" alt="Node.js">
+                    <p>Node.js</p>
+                </li>
+            </ul>
+            <p>Currently learning Sass</p>
         </section>
         <section id="projects">
             <h2>My projects</h2>
