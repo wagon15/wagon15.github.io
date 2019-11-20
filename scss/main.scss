@@ -87,12 +87,19 @@ Landing section
     &__btn-primary {
         display: block;
 
-        padding: 1rem 2rem;
+        padding: .5em 2em;
         //max-width: 10rem;
 
         letter-spacing: .1rem;
         border: .2rem solid $text-primary;
         border-radius: 3rem;
+        transition: .2s ease;
+
+        &:hover,
+        &:active {
+            color: $background-primary;
+            border-color: $background-primary;
+        }
     }
 
     &__avatar {
@@ -205,6 +212,15 @@ Nav bar section
         border: .1rem solid $text-primary;
         border-radius: 1rem;
         background-color: transparent;
+        outline: none;
+
+        transition: .2s ease;
+
+        &:hover,
+        &:active {
+            color: $background-primary;
+            border-color: $background-primary;
+        }
     }
 
     $number-of-links: 3;
@@ -379,8 +395,22 @@ Projects section
         width: 2.5em;
     }
 
+    @keyframes button-arrow {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(.5em);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
     &__btn-secondary {
         display: inline-block;
+        position: relative;
 
         margin: 1em 1em 0;
         padding: .4em 2em;
@@ -391,6 +421,21 @@ Projects section
 
         border: .2rem solid $text-secondary;
         border-radius: 3em;
+
+        transition: .2s ease;
+
+        &:hover,
+        &:active {
+            color: $background-primary;
+            border-color: $background-primary;
+
+            &::after {
+                animation: button-arrow 1s ease infinite forwards;
+                content: '\279C';
+
+                position: absolute;
+            }
+        }
     }
 }
 
@@ -530,9 +575,15 @@ Projects section
         font-weight: bold;
         color: $text-tertiary;
 
-        border: .1rem solid $text-tertiary;
+        border: .2rem solid $text-tertiary;
         border-radius: 3rem;
+        transition: .2s ease;
 
+        &:hover,
+        &:active {
+            background-color: $text-tertiary;
+            color: $background-primary;
+        }
     }
 }
 
