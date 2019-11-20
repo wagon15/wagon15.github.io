@@ -11,6 +11,9 @@ $background-primary: #fdcc52;
 $background-footer: #222222;
 $landing-background:  url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4c4c4' fill-opacity='0.17'%3E%3Cpath d='M84 23c-4.417 0-8-3.584-8-7.998V8h-7.002C64.58 8 61 4.42 61 0H23c0 4.417-3.584 8-7.998 8H8v7.002C8 19.42 4.42 23 0 23v38c4.417 0 8 3.584 8 7.998V76h7.002C19.42 76 23 79.58 23 84h38c0-4.417 3.584-8 7.998-8H76v-7.002C76 64.58 79.58 61 84 61V23zM59.05 83H43V66.95c5.054-.5 9-4.764 9-9.948V52h5.002c5.18 0 9.446-3.947 9.95-9H83v16.05c-5.054.5-9 4.764-9 9.948V74h-5.002c-5.18 0-9.446 3.947-9.95 9zm-34.1 0H41V66.95c-5.053-.502-9-4.768-9-9.948V52h-5.002c-5.184 0-9.447-3.946-9.95-9H1v16.05c5.053.502 9 4.768 9 9.948V74h5.002c5.184 0 9.447 3.946 9.95 9zm0-82H41v16.05c-5.054.5-9 4.764-9 9.948V32h-5.002c-5.18 0-9.446 3.947-9.95 9H1V24.95c5.054-.5 9-4.764 9-9.948V10h5.002c5.18 0 9.446-3.947 9.95-9zm34.1 0H43v16.05c5.053.502 9 4.768 9 9.948V32h5.002c5.184 0 9.447 3.946 9.95 9H83V24.95c-5.053-.502-9-4.768-9-9.948V10h-5.002c-5.184 0-9.447-3.946-9.95-9zM50 50v7.002C50 61.42 46.42 65 42 65c-4.417 0-8-3.584-8-7.998V50h-7.002C22.58 50 19 46.42 19 42c0-4.417 3.584-8 7.998-8H34v-7.002C34 22.58 37.58 19 42 19c4.417 0 8 3.584 8 7.998V34h7.002C61.42 34 65 37.58 65 42c0 4.417-3.584 8-7.998 8H50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right, $gradient-primary, $gradient-secondary);
 $section-width-mobile: 85%;
+$separator-color: #dc243080;
+$separator-position: 2em;
+
     
 /*
 ============== Global ==============
@@ -48,7 +51,7 @@ Landing section
     //Position
 
     // Box model
-    width: 100vw;
+    //width: 100vw;
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
@@ -73,7 +76,7 @@ Landing section
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
 
         width: $section-width-mobile;
         min-height: 30%;
@@ -85,7 +88,7 @@ Landing section
         display: block;
 
         padding: 1rem 2rem;
-        max-width: 10rem;
+        //max-width: 10rem;
 
         letter-spacing: .1rem;
         border: .2rem solid $text-primary;
@@ -94,8 +97,9 @@ Landing section
 
     &__avatar {
         order: 2;
-        max-height: 40%;
+        max-height: 35%;
         max-width: $section-width-mobile;
+
         border-radius: 50%;
         box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
     }
@@ -103,6 +107,7 @@ Landing section
     &__scroll-icon{
         position: fixed;
         bottom: 1rem;
+        right: 1rem;
     }
 }
 /*
@@ -198,7 +203,7 @@ $corner-height: 100px;
 
     background-color: $background-primary;
 
-    & div {
+    &>div {
         width: $section-width-mobile;
         margin-left: auto;
         margin-right: auto;
@@ -277,20 +282,16 @@ Projects section
     }
 
 }
-
 .project-tile {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding-top: $separator-position;
 
-    &:after{
-        $separator-height: .2em;
+    &--bottom-separator{
+        $separator-height: .05em;
 
-        content: '';
-        display: block;
-        background-color: $text-secondary;
-        width: 100%;
-        height: $separator-height;
-        border-radius: $separator-height;
+        //margin-bottom: 1em;
+        padding-bottom: $separator-position;
+        border-bottom: $separator-height solid $separator-color;
+
     }
 
     &__project-image {
@@ -335,7 +336,7 @@ Projects section
     &__btn-secondary {
         display: inline-block;
 
-        margin: 1em;
+        margin: 1em 1em 0;
         padding: .4em 2em;
         max-width: 10em;
 
@@ -345,6 +346,152 @@ Projects section
         border: .2rem solid $text-secondary;
         border-radius: 3em;
     }
+}
+
+.contact-section {
+    position: relative; // For svg positioning
+
+    padding-top: $corner-height;
+
+    text-align: center;
+
+    background-color: $background-primary;
+
+    &__corner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $corner-height;
+    }
+
+    &__header {
+        @extend .expierience-section__header;
+
+        &--no-top-padding{
+            @extend .projects-section__header--no-top-padding;
+        }
+    }
+
+    &__red-text{
+        @extend .expierience-section__red-text;
+    }
+
+    &>div {
+        width: $section-width-mobile;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    $input-height: 2em;
+    // Calculation to move label to edge of input. 
+    // Transform origin in middle of label height.
+    $tranform-label: translateY( -($input-height + 1em) / 2 ) ;
+
+    &__input-container {
+        position: relative;
+
+        padding-top: ($input-height / 2);
+        
+        color: $text-quaternary;
+    }
+
+    &__label-input {
+        position: absolute;
+        bottom: ($input-height - 1em) / 2;
+        left: 0;
+        transform-origin: 0 0;
+        transition: all .2s ease;
+
+        .contact-section__input:focus + & {
+            
+            transform: $tranform-label;
+            color: $text-tertiary
+        }
+
+        .contact-section__input:not(:placeholder-shown) + & {
+            transform: $tranform-label;
+        }
+    }
+
+    &__input {
+        appearance: none;
+        width: 100%;
+        height: $input-height;
+        border: 0;
+        font-family: inherit;
+        
+        font-weight: normal;
+        border-bottom: .1em solid $text-quaternary;
+        background: none;
+        color: $text-secondary;
+        transition: all .2s ease;
+
+            &:focus {
+                outline: none;
+                background: none;
+                border-bottom-color: $text-tertiary;
+            }
+    }
+
+    &__textarea {
+        box-sizing: border-box;
+        appearance: none;
+        width: 100%;
+        padding: .5em;
+        margin-top: .5em;
+        font-family: inherit;
+        
+        font-weight: normal;
+        border: .1em solid $text-quaternary;
+        background: none;
+        color: $text-secondary;
+        transition: all .2s ease;
+        
+
+        &:focus {
+            outline: none;
+            border-color: $text-tertiary;
+        }
+    }
+    
+    &__label-textarea {
+        position: absolute;
+        top: (1.75em);
+        left: .2em;
+        transition: all .2s ease;
+
+        .contact-section__textarea:focus + & {
+            transform: $tranform-label;            
+            color: $text-tertiary;
+            left: 0;
+        }
+
+        .contact-section__textarea:not(:placeholder-shown) + & {
+            transform: $tranform-label;
+            left: 0;
+        }
+    }
+
+    &__btn-primary {
+        background: none;
+
+        margin: .5em 0 2em;
+        padding: .5em 3em;
+
+        letter-spacing: .1rem;
+        font-weight: bold;
+        color: $text-tertiary;
+
+        border: .1rem solid $text-tertiary;
+        border-radius: 3rem;
+
+    }
+}
+
+.footer {
+    border-top: .2rem solid $gradient-primary;
+    background-color: $background-footer;
 }
 
 img {

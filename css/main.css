@@ -35,7 +35,6 @@ Landing section
 ============================
 */
 .landing-section {
-  width: 100vw;
   height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -89,10 +88,10 @@ Landing section
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 85%;
   min-height: 30%;
   text-align: center;
@@ -101,7 +100,6 @@ Landing section
 .landing-section__btn-primary {
   display: block;
   padding: 1rem 2rem;
-  max-width: 10rem;
   letter-spacing: .1rem;
   border: 0.2rem solid #ffffff;
   border-radius: 3rem;
@@ -112,7 +110,7 @@ Landing section
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2;
-  max-height: 40%;
+  max-height: 35%;
   max-width: 85%;
   border-radius: 50%;
   -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
@@ -122,6 +120,7 @@ Landing section
 .landing-section__scroll-icon {
   position: fixed;
   bottom: 1rem;
+  right: 1rem;
 }
 
 /*
@@ -227,20 +226,20 @@ Expierience section
   background-color: #fdcc52;
 }
 
-.expierience-section div {
+.expierience-section > div {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.expierience-section__header, .projects-section__header {
+.expierience-section__header, .projects-section__header, .contact-section__header {
   font-size: 2.5em;
   margin: 0;
   padding-top: 2em;
   margin-bottom: 3rem;
 }
 
-.expierience-section__red-text, .projects-section__red-text, .project-tile__red-text {
+.expierience-section__red-text, .projects-section__red-text, .project-tile__red-text, .contact-section__red-text {
   color: #dc2430;
 }
 
@@ -302,22 +301,17 @@ Projects section
   text-align: center;
 }
 
-.projects-section__header--no-top-padding {
+.projects-section__header--no-top-padding, .contact-section__header--no-top-padding {
   padding-top: 0;
 }
 
 .project-tile {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  padding-top: 2em;
 }
 
-.project-tile:after {
-  content: '';
-  display: block;
-  background-color: #212529;
-  width: 100%;
-  height: 0.2em;
-  border-radius: 0.2em;
+.project-tile--bottom-separator {
+  padding-bottom: 2em;
+  border-bottom: 0.05em solid #dc243080;
 }
 
 .project-tile__project-image {
@@ -379,13 +373,157 @@ Projects section
 
 .project-tile__btn-secondary {
   display: inline-block;
-  margin: 1em;
+  margin: 1em 1em 0;
   padding: .4em 2em;
   max-width: 10em;
   letter-spacing: .1rem;
   text-transform: uppercase;
   border: 0.2rem solid #212529;
   border-radius: 3em;
+}
+
+.contact-section {
+  position: relative;
+  padding-top: 100px;
+  text-align: center;
+  background-color: #fdcc52;
+}
+
+.contact-section__corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.contact-section > div {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-section__input-container {
+  position: relative;
+  padding-top: 1em;
+  color: #6C757D;
+}
+
+.contact-section__label-input {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+       -o-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.contact-section__input:focus + .contact-section__label-input {
+  -webkit-transform: translateY(-1.5em);
+      -ms-transform: translateY(-1.5em);
+       -o-transform: translateY(-1.5em);
+          transform: translateY(-1.5em);
+  color: #dc2430;
+}
+
+.contact-section__input:not(:placeholder-shown) + .contact-section__label-input {
+  -webkit-transform: translateY(-1.5em);
+      -ms-transform: translateY(-1.5em);
+       -o-transform: translateY(-1.5em);
+          transform: translateY(-1.5em);
+}
+
+.contact-section__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 2em;
+  border: 0;
+  font-family: inherit;
+  font-weight: normal;
+  border-bottom: 0.1em solid #6C757D;
+  background: none;
+  color: #212529;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.contact-section__input:focus {
+  outline: none;
+  background: none;
+  border-bottom-color: #dc2430;
+}
+
+.contact-section__textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  padding: .5em;
+  margin-top: .5em;
+  font-family: inherit;
+  font-weight: normal;
+  border: 0.1em solid #6C757D;
+  background: none;
+  color: #212529;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.contact-section__textarea:focus {
+  outline: none;
+  border-color: #dc2430;
+}
+
+.contact-section__label-textarea {
+  position: absolute;
+  top: 1.75em;
+  left: .2em;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.contact-section__textarea:focus + .contact-section__label-textarea {
+  -webkit-transform: translateY(-1.5em);
+      -ms-transform: translateY(-1.5em);
+       -o-transform: translateY(-1.5em);
+          transform: translateY(-1.5em);
+  color: #dc2430;
+  left: 0;
+}
+
+.contact-section__textarea:not(:placeholder-shown) + .contact-section__label-textarea {
+  -webkit-transform: translateY(-1.5em);
+      -ms-transform: translateY(-1.5em);
+       -o-transform: translateY(-1.5em);
+          transform: translateY(-1.5em);
+  left: 0;
+}
+
+.contact-section__btn-primary {
+  background: none;
+  margin: .5em 0 2em;
+  padding: .5em 3em;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  color: #dc2430;
+  border: 0.1rem solid #dc2430;
+  border-radius: 3rem;
+}
+
+.footer {
+  border-top: 0.2rem solid #dc2430;
+  background-color: #222222;
 }
 
 img {
