@@ -349,10 +349,10 @@ Expierience section
   -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-  -webkit-justify-content: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: baseline;
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
@@ -430,7 +430,7 @@ Projects section
   text-align: left;
 }
 
-.project-tile__list {
+.project-tile__list, .footer-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -450,7 +450,7 @@ Projects section
           align-items: baseline;
 }
 
-.project-tile__list-item {
+.project-tile__list-item, .footer-list__item {
   display: inline-block;
   width: 2.5em;
 }
@@ -508,18 +508,18 @@ Projects section
 }
 
 .contact-section__input:focus + .contact-section__label-input {
-  -webkit-transform: translateY(-1.5em);
-      -ms-transform: translateY(-1.5em);
-       -o-transform: translateY(-1.5em);
-          transform: translateY(-1.5em);
+  -webkit-transform: translateY(-1.5em) scale(0.9);
+      -ms-transform: translateY(-1.5em) scale(0.9);
+       -o-transform: translateY(-1.5em) scale(0.9);
+          transform: translateY(-1.5em) scale(0.9);
   color: #dc2430;
 }
 
 .contact-section__input:not(:placeholder-shown) + .contact-section__label-input {
-  -webkit-transform: translateY(-1.5em);
-      -ms-transform: translateY(-1.5em);
-       -o-transform: translateY(-1.5em);
-          transform: translateY(-1.5em);
+  -webkit-transform: translateY(-1.5em) scale(0.9);
+      -ms-transform: translateY(-1.5em) scale(0.9);
+       -o-transform: translateY(-1.5em) scale(0.9);
+          transform: translateY(-1.5em) scale(0.9);
 }
 
 .contact-section__input {
@@ -579,19 +579,19 @@ Projects section
 }
 
 .contact-section__textarea:focus + .contact-section__label-textarea {
-  -webkit-transform: translateY(-1.5em);
-      -ms-transform: translateY(-1.5em);
-       -o-transform: translateY(-1.5em);
-          transform: translateY(-1.5em);
+  -webkit-transform: translateY(-1.5em) scale(0.9);
+      -ms-transform: translateY(-1.5em) scale(0.9);
+       -o-transform: translateY(-1.5em) scale(0.9);
+          transform: translateY(-1.5em) scale(0.9);
   color: #dc2430;
   left: 0;
 }
 
 .contact-section__textarea:not(:placeholder-shown) + .contact-section__label-textarea {
-  -webkit-transform: translateY(-1.5em);
-      -ms-transform: translateY(-1.5em);
-       -o-transform: translateY(-1.5em);
-          transform: translateY(-1.5em);
+  -webkit-transform: translateY(-1.5em) scale(0.9);
+      -ms-transform: translateY(-1.5em) scale(0.9);
+       -o-transform: translateY(-1.5em) scale(0.9);
+          transform: translateY(-1.5em) scale(0.9);
   left: 0;
 }
 

@@ -283,7 +283,7 @@ $corner-height: 100px;
 .tools-list{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: baseline;
 
     margin-top: 3rem;
@@ -432,7 +432,7 @@ Projects section
     $input-height: 2em;
     // Calculation to move label to edge of input. 
     // Transform origin in middle of label height.
-    $tranform-label: translateY( -($input-height + 1em) / 2 ) ;
+    $tranform-label: translateY( -($input-height + 1em) / 2 ) scale(.9);
 
     &__input-container {
         position: relative;
@@ -554,6 +554,14 @@ Projects section
 
 
         text-align: center;
+    }    
+}
+
+.footer-list {
+    @extend .project-tile__list;
+
+    &__item {
+        @extend .project-tile__list-item;
     }
 }
 
