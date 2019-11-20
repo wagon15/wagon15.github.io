@@ -85,12 +85,30 @@
         <section id="projects" class="projects-section">
             <h2 class="projects-section__header projects-section__header--no-top-padding">My projects</h2>
             <p class="projects-section__red-text">Some of projects I have created:</p>
-            <section class="project-tile">
-                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
+            <section class="project-tile project-tile--bottom-separator">
                 <div class="project-tile__container">
                     <h3>Coniunctum App</h3>
                     <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
                 </div>
+                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
+                <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
+                <h4>Technologies:</h4>
+                <ul class="project-tile__list">
+                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                </ul>
+                <div class="project-tile__container">
+                    <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
+                    <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
+                </div>
+            </section>
+            <section class="project-tile project-tile--bottom-separator">
+                <div class="project-tile__container">
+                    <h3>Coniunctum App</h3>
+                    <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
+                </div>
+                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
                 <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
                 <h4>Technologies:</h4>
                 <ul class="project-tile__list">
@@ -104,29 +122,11 @@
                 </div>
             </section>
             <section class="project-tile">
-                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
                 <div class="project-tile__container">
                     <h3>Coniunctum App</h3>
                     <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
                 </div>
-                <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
-                <h4>Technologies:</h4>
-                <ul class="project-tile__list">
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                </ul>
-                <div class="project-tile__container">
-                    <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
-                    <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
-                </div>
-            </section>
-            <section class="project-tile">
                 <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
-                <div class="project-tile__container">
-                    <h3>Coniunctum App</h3>
-                    <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
-                </div>
                 <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
                 <h4>Technologies:</h4>
                 <ul class="project-tile__list">
@@ -140,29 +140,43 @@
                 </div>
             </section>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you like my work or have any question, please feel free to contact me.</p>
-            <form action="post">
-                <label for="name">Name<input type="text" name="name" id="name"></label>
-                <label for="email">Email<input type="email" name="email" id="email"></label>
-                <label for="message">Message<textarea name="message" id="message" cols="30" rows="10"></textarea></label>
-                <button type="submit">Send</button>
-            </form>
+        <section id="contact" class="contact-section">
+            <svg class="contact-section__corner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon fill="#ffffff" points="0,0 100,0 100,100" />
+            </svg>
+            <div>
+                <h2 class="contact-section__header contact-section__header--no-top-padding">Contact</h2>
+                <p class="contact-section__red-text">If you like my work or have any question, please feel free to contact me.</p>
+                <form action="post">
+                    <div class="contact-section__input-container">
+                        <input class="contact-section__input" required placeholder="&nbsp;" type="text" name="name" id="name">
+                        <label class="contact-section__label-input" for="name">Name</label>
+                    </div>
+                    <div class="contact-section__input-container">
+                        <input class="contact-section__input" required type="email" name="email" placeholder="&nbsp;" id="email">
+                        <label class="contact-section__label-input" for="email">Email</label>
+                    </div>
+                    <div class="contact-section__input-container">
+                        <textarea class="contact-section__textarea" required placeholder="&nbsp;" name="message" required id="message" cols="30" rows="10"></textarea>
+                        <label class="contact-section__label-textarea" for="message">Message</label>
+                    </div>
+                    <button class="contact-section__btn-primary" type="submit">Send</button>
+                </form>
+            </div>
         </section>
     </main>
-    <footer>
-        <ul>
-            <li><a href="https://github.com/wagon15">
+    <footer class="footer">
+        <ul class="project-tile__list">
+            <li class="project-tile__list-item"><a href="https://github.com/wagon15">
                 <img src="./media/github_icon.png" alt="GitHub">
             </a></li>
-            <li><a href="https://www.linkedin.com/in/wojciech-peciak/">
+            <li class="project-tile__list-item"><a href="https://www.linkedin.com/in/wojciech-peciak/">
                 <img src="./media/linkedin_icon.png" alt="LinkedIn">
             </a></li>
-            <li><a href="https://www.facebook.com/wojciech.peciak">
+            <li class="project-tile__list-item"><a href="https://www.facebook.com/wojciech.peciak">
                 <img src="./media/facebook_icon.png" alt="Facebook">
             </a></li>
-            <li><a href="https://www.freecodecamp.org/wagon15">
+            <li class="project-tile__list-item"><a href="https://www.freecodecamp.org/wagon15">
                 <img src="./media/freeCodeCamp_icon.png" alt="FreeCodeCamp">
             </a></li>
         </ul>
