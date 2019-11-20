@@ -184,6 +184,11 @@ Nav bar section
     
     box-shadow: 0 5px 5px 2px rgba(0,0,0,0.5);
 
+    &--is-fixed {
+        position: fixed;
+        width: 100%;
+    }
+
     &__top {
         border-top: $border-size solid $text-primary;
         border-bottom: $border-size solid $text-primary;
@@ -226,6 +231,7 @@ Nav bar section
     $number-of-links: 3;
 
     &__links {
+        position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -233,6 +239,12 @@ Nav bar section
         padding-left: 1em;
 
         height: $number-of-links * 2em;
+        width: 100%;
+        box-sizing: border-box;
+        transition: .2s ease;
+
+        background-image: $landing-background;
+
 
         &--hidden {
             display: none;
