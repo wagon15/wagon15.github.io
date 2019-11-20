@@ -392,8 +392,9 @@ Projects section
         position: relative;
 
         padding-top: ($input-height / 2);
-        
+                
         color: $text-quaternary;
+        text-align: left;
     }
 
     &__label-input {
@@ -446,7 +447,7 @@ Projects section
         border: .1em solid $text-quaternary;
         background: none;
         color: $text-secondary;
-        transition: all .2s ease;
+        transition: border-color .2s ease;
         
 
         &:focus {
