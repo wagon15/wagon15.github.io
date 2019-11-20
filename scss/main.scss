@@ -491,8 +491,24 @@ Projects section
 }
 
 .footer {
+    padding-top: 1em;
+
     border-top: .2rem solid $gradient-primary;
     background-color: $background-footer;
+    color: $text-tertiary;
+
+    &>div {
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: space-around;
+        max-width: 20em;
+
+
+        text-align: center;
+    }
 }
 
 img {
