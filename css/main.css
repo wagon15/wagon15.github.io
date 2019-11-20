@@ -117,10 +117,94 @@ Landing section
           box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-o-keyframes scroll {
+  0% {
+    -o-transform: translateY(0);
+       transform: translateY(0);
+  }
+  50% {
+    -o-transform: translateY(5px);
+       transform: translateY(5px);
+  }
+  100% {
+    -o-transform: translateY(0);
+       transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+         -o-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .landing-section__scroll-icon {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing-section__scroll-icon::before {
+  margin-bottom: .5rem;
+  content: '';
+  width: 20px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid #fdcc52;
+}
+
+.landing-section__scroll-icon::after {
+  position: absolute;
+  top: 10px;
+  content: '';
+  width: 5px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: .5rem;
+  -webkit-animation: scroll 2s ease-out infinite forwards;
+       -o-animation: scroll 2s ease-out infinite forwards;
+          animation: scroll 2s ease-out infinite forwards;
 }
 
 /*

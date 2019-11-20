@@ -103,11 +103,57 @@ Landing section
         border-radius: 50%;
         box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
     }
-    // Needs to be finished
+    
+    $scroll-icon-width: 20px;
+    // Set on 1/4 of the scroll icon height
+    $scroll-wheel-position: (.25 * 2 * $scroll-icon-width);
+    @keyframes scroll {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY( .5 * $scroll-wheel-position);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
     &__scroll-icon{
         position: fixed;
         bottom: 1rem;
         right: 1rem;
+
+        text-transform: uppercase;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        &::before {
+            margin-bottom: .5rem;
+            content: '';
+            width: $scroll-icon-width;
+            height: (2 * $scroll-icon-width);
+
+            border-radius: $scroll-icon-width;
+            border: (.1 * $scroll-icon-width) solid $background-primary;
+        }
+
+        &::after {
+            position: absolute;
+            top: $scroll-wheel-position;
+
+            content: '';
+            width: (.25 * $scroll-icon-width);
+            height: (.5 * $scroll-icon-width);
+
+            background-color: $text-primary;
+            border-radius: .5rem;
+
+            animation: scroll 2s ease-out infinite forwards;
+        }
     }
 }
 /*
