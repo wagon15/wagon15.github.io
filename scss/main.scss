@@ -13,7 +13,9 @@ $landing-background:  url("data:image/svg+xml,%3Csvg width='84' height='84' view
 $section-width-mobile: 85%;
 $separator-color: #dc243080;
 $separator-position: 2em;
-
+$layout-brakepoint: 40rem;
+$section-width-desktop: 70%;
+$section-width-desktop-max: 80rem;
     
 /*
 ============== Global ==============
@@ -27,6 +29,9 @@ body{
     font-size: 1.6rem; // Sets back to 16px
     font-family: Catamaran, Helvetica, Arial, sans-serif;
     color: $text-secondary;
+
+    
+
 }
 
 a {
@@ -47,9 +52,16 @@ ul {
 Landing section
 ============================
 */
+#about {
+    // Visual
+    background-image: $landing-background;
+    // Typography
+    color: $text-primary;
+}
 .landing-section {
     //Position
-
+    margin-left: auto;
+    margin-right: auto;
     // Box model
     //width: 100vw;
     height: 100vh;
@@ -58,13 +70,9 @@ Landing section
     align-items: center;
     justify-content: center;
 
-    // Typography
-    color: $text-primary;
-    // Visual
-    background-image: $landing-background;
+    
 
     &__header {
-        order: 1;
 
         font-size: 2.5em;           
         text-shadow: 3px 4px 1px rgba(0, 0, 0, 0.5);
@@ -72,7 +80,7 @@ Landing section
     }
 
     &__description {
-        order: 3;
+        order: 2;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
@@ -103,7 +111,7 @@ Landing section
     }
 
     &__avatar {
-        order: 2;
+        order: 1;
         max-height: 35%;
         max-width: $section-width-mobile;
 
@@ -138,6 +146,12 @@ Landing section
         flex-flow: column nowrap;
         align-items: center;
 
+        transition: .5s ease;
+
+        &--is-hidden {
+            opacity: 0;
+        }
+
         &::before {
             margin-bottom: .5rem;
             content: '';
@@ -163,6 +177,33 @@ Landing section
         }
     }
 }
+
+@media only screen and (min-width: $layout-brakepoint) {
+    .landing-section {
+        flex-direction: row;
+        width: $section-width-desktop;
+        max-width: $section-width-desktop-max;
+
+
+        &__description {
+            order: 1;
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        &__avatar {
+            order: 2;
+            width: 35%;
+            max-width: 20rem;
+            max-height: none;
+            margin-left: 5%;
+        }
+
+        &__scroll-icon {
+            right: 50%;
+        }
+    }
+}
 /*
 ============================
 Nav bar section
@@ -170,11 +211,14 @@ Nav bar section
 */
 
 .nav-bar{
+
     $border-size: .2rem;
+    $bar-height: 3em;
 
     position: sticky;
     top: -$border-size;
     z-index: 1;
+    height: $bar-height;
 
     font-weight: bold;
     font-size: 1.4em;
@@ -184,19 +228,19 @@ Nav bar section
     
     box-shadow: 0 5px 5px 2px rgba(0,0,0,0.5);
 
-    &--is-fixed {
-        position: fixed;
-        width: 100%;
-    }
-
-    &__top {
-        border-top: $border-size solid $text-primary;
-        border-bottom: $border-size solid $text-primary;
-        
+    border-top: $border-size solid $text-primary;
+    border-bottom: $border-size solid $text-primary;
+    
+    &__container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center
+        align-items: center;
+
+        height: $bar-height;
+        max-width: 150rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     & p {
@@ -217,9 +261,8 @@ Nav bar section
         border: .1rem solid $text-primary;
         border-radius: 1rem;
         background-color: transparent;
-        outline: none;
 
-        transition: .2s ease;
+        transition: scaleY .2s ease;
 
         &:hover,
         &:active {
@@ -227,11 +270,17 @@ Nav bar section
             border-color: $background-primary;
         }
     }
+    @media only screen and (min-width: $layout-brakepoint) {
+        &__btn-primary {
+            display: none;
+        }
+    }
 
     $number-of-links: 3;
 
     &__links {
         position: absolute;
+        top: $bar-height;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -244,20 +293,46 @@ Nav bar section
         transition: .2s ease;
 
         background-image: $landing-background;
+        border-top: $border-size solid $text-primary;
+        border-bottom: $border-size solid $text-primary;
+
+        transform-origin: top;
+        transform: scaleY(0);
 
 
-        &--hidden {
-            display: none;
+
+        &--is-open {
+            transform: scaleY(1);
         }
 
     }
-
+    
     &__link {
         display: block;
 
         &:hover,
         &:active{
             color: $background-primary;
+        }
+    }
+
+    @media only screen and (min-width: $layout-brakepoint) {
+       
+        &__links {
+            transform: scaleY(1);
+            position: relative;
+            height: auto;
+            top: auto;
+            flex-direction: row;
+            width: 15em;
+            background: none;
+            border: none;
+            justify-content: center;
+        }
+
+        &__link {
+            display: inline;
+            margin-right: 1em;
         }
     }
 }
@@ -269,10 +344,6 @@ Expierience section
 */
 $corner-height: 100px;
 .expierience-section {
-    position: relative; // For svg positioning
-
-    padding-bottom: $corner-height;
-
     text-align: center;
 
     background-color: $background-primary;
@@ -301,7 +372,7 @@ $corner-height: 100px;
 
     &__corner {
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 0;
         width: 100%;
         height: $corner-height;
@@ -337,11 +408,10 @@ Projects section
 */
 
 .projects-section {
-    width: $section-width-mobile;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative; // For svg positioning
+    padding-top: $corner-height;
+    width: 100%;
 
-    text-align: center;
 
     &__header {
         @extend .expierience-section__header;
@@ -355,6 +425,13 @@ Projects section
         @extend .expierience-section__red-text;
     }
 
+}
+.projects-container {
+    width: $section-width-mobile;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
 }
 .project-tile {
     padding-top: $separator-position;

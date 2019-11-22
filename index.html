@@ -12,30 +12,30 @@
 </head>
 <body>
     <main>
-        <section id="about" class="landing-section">
-            <h1 class="landing-section__header">Hi, I'm Wojtek!</h1>
-            <div class="landing-section__description">
-                <p>Web developer from Poland, focused on front-end, but aiming to become full-stack developer. 
-                    Feel free to check out my projects down below.
-                    I'm currently looking for an entry level position or an internship.
-                </p>
-                <a class="landing-section__btn-primary" href="http://www.google.com">resume</a>
+        <section id="about" >
+            <div class="landing-section">
+                <div class="landing-section__description">
+                    <h1 class="landing-section__header">Hi, I'm Wojtek!</h1>
+                    <p>Web developer from Poland, focused on front-end, but aiming to become full-stack developer. 
+                        Feel free to check out my projects down below.
+                        I'm currently looking for an entry level position or an internship.
+                    </p>
+                    <a class="landing-section__btn-primary" href="http://www.google.com">resume</a>
+                </div>
+                <img class="landing-section__avatar" src="./media/profil.jpg" alt="Wojciech Pęciak in formal outfit">
             </div>
-            <img class="landing-section__avatar" src="./media/profil.jpg" alt="Wojciech Pęciak in formal outfit">
-            <div class="landing-section__scroll-icon">scroll</div>
+            <div id="scrollIcon" class="landing-section__scroll-icon">scroll</div>
         </section>
-        <div class="nav-bar" id="nav-bar">
-            <div class="nav-bar__top">
-                <p>Wojciech Pęciak</p>
+        <div id="nav-bar" class="nav-bar">
+            <div class="nav-bar__container">
+                <a href="#about"><p>Wojciech Pęciak</p></a>
                 <button id="nav-dropdown" class="nav-bar__btn-primary">Menu</button>
+                <nav id="linkList" class="nav-bar__links">
+                    <a id="aboutLink" class="nav-bar__link" href="#about">About</a>
+                    <a id="projectsLink" class="nav-bar__link" href="#projects">Projects</a>
+                    <a id="contactLink" class="nav-bar__link" href="#contact">Contact</a>
+                </nav>
             </div>
-            <nav>
-                <ul id="linkList" class="nav-bar__links nav-bar__links--hidden">
-                    <li><a class="nav-bar__link" href="#about">About</a></li>
-                    <li><a class="nav-bar__link" href="#projects">Projects</a></li>
-                    <li><a class="nav-bar__link" href="#contact">Contact</a></li>
-                </ul>
-            </nav>
         </div>
         <section class="expierience-section">
             <div>
@@ -77,67 +77,69 @@
                 </ul>
                 <p class="expierience-section__red-text expierience-section__red-text--no-bottom-margin">Currently learning Sass</p>
             </div>
-            <svg class="expierience-section__corner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon fill="#ffffff" points="0,100 100,100 100,0" />
-            </svg>
         </section>
         <section id="projects" class="projects-section">
-            <h2 class="projects-section__header projects-section__header--no-top-padding">My projects</h2>
-            <p class="projects-section__red-text">Some of projects I have created:</p>
-            <section class="project-tile project-tile--bottom-separator">
-                <div class="project-tile__container">
-                    <h3>Coniunctum App</h3>
-                    <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
-                </div>
-                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
-                <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
-                <h4>Technologies:</h4>
-                <ul class="project-tile__list">
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                </ul>
-                <div class="project-tile__container">
-                    <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
-                    <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
-                </div>
-            </section>
-            <section class="project-tile project-tile--bottom-separator">
-                <div class="project-tile__container">
-                    <h3>Coniunctum App</h3>
-                    <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
-                </div>
-                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
-                <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
-                <h4>Technologies:</h4>
-                <ul class="project-tile__list">
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                </ul>
-                <div class="project-tile__container">
-                    <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
-                    <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
-                </div>
-            </section>
-            <section class="project-tile">
-                <div class="project-tile__container">
-                    <h3>Coniunctum App</h3>
-                    <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
-                </div>
-                <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
-                <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
-                <h4>Technologies:</h4>
-                <ul class="project-tile__list">
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                    <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
-                </ul>
-                <div class="project-tile__container">
-                    <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
-                    <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
-                </div>
-            </section>
+            <svg class="expierience-section__corner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon fill="#fdcc52" points="0,0 100,0 0,100" />
+            </svg>
+            <div class="projects-container">
+                <h2 class="projects-section__header projects-section__header--no-top-padding">My projects</h2>
+                <p class="projects-section__red-text">Some of projects I have created:</p>
+                <section class="project-tile project-tile--bottom-separator">
+                    <div class="project-tile__container">
+                        <h3>Coniunctum App</h3>
+                        <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
+                    </div>
+                    <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
+                    <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
+                    <h4>Technologies:</h4>
+                    <ul class="project-tile__list">
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                    </ul>
+                    <div class="project-tile__container">
+                        <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
+                        <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
+                    </div>
+                </section>
+                <section class="project-tile project-tile--bottom-separator">
+                    <div class="project-tile__container">
+                        <h3>Coniunctum App</h3>
+                        <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
+                    </div>
+                    <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
+                    <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
+                    <h4>Technologies:</h4>
+                    <ul class="project-tile__list">
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                    </ul>
+                    <div class="project-tile__container">
+                        <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
+                        <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
+                    </div>
+                </section>
+                <section class="project-tile">
+                    <div class="project-tile__container">
+                        <h3>Coniunctum App</h3>
+                        <img class="project-tile__project-logo" src="./media/coniunctum.logo.png" alt="Coninctum App icon">
+                    </div>
+                    <img class="project-tile__project-image" src="./media/Coniunctum.png" alt="Coniunctum App presentation on devices">
+                    <p class="project-tile__red-text">Coniunctum is couples-focused wev app which allows to comunicate with sifnificant other as well as keep track of your callendar.</p>
+                    <h4>Technologies:</h4>
+                    <ul class="project-tile__list">
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                        <li class="project-tile__list-item"><img src="./media/html5_red.png" alt="HTML5"></li>
+                    </ul>
+                    <div class="project-tile__container">
+                        <a class="project-tile__btn-secondary" href="https://coniunctum.herokuapp.com/">Demo</a>
+                        <a class="project-tile__btn-secondary" href="https://github.com/wagon15/coniunctumApp">Code</a>
+                    </div>
+                </section>
+            </div>
         </section>
         <section id="contact" class="contact-section">
             <svg class="contact-section__corner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
