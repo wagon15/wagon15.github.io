@@ -13,9 +13,9 @@ $landing-background:  url("data:image/svg+xml,%3Csvg width='84' height='84' view
 $section-width-mobile: 85%;
 $separator-color: #dc243080;
 $separator-position: 2em;
-$layout-brakepoint: 40rem;
+$layout-brakepoint: 50rem;
 $section-width-desktop: 70%;
-$section-width-desktop-max: 80rem;
+$section-width-desktop-max: 90rem;
     
 /*
 ============== Global ==============
@@ -30,7 +30,9 @@ body{
     font-family: Catamaran, Helvetica, Arial, sans-serif;
     color: $text-secondary;
 
-    
+    @media only screen and (min-width: $layout-brakepoint){
+        font-size: 200%;
+    }
 
 }
 
@@ -213,7 +215,7 @@ Nav bar section
 .nav-bar{
 
     $border-size: .2rem;
-    $bar-height: 3em;
+    $bar-height: 2em;
 
     position: sticky;
     top: -$border-size;
@@ -231,6 +233,10 @@ Nav bar section
     border-top: $border-size solid $text-primary;
     border-bottom: $border-size solid $text-primary;
     
+    @media only screen and (min-width: $layout-brakepoint) {
+        font-size: 1.2em;
+    }
+
     &__container {
         display: flex;
         flex-direction: row;
@@ -352,6 +358,11 @@ $corner-height: 100px;
         width: $section-width-mobile;
         margin-left: auto;
         margin-right: auto;
+
+        @media only screen and (min-width: $layout-brakepoint) {
+            width: $section-width-desktop;
+            max-width: $section-width-desktop-max;
+        }
     }
 
     &__header {
@@ -377,6 +388,8 @@ $corner-height: 100px;
         width: 100%;
         height: $corner-height;
     }
+
+    
 }
 
 .tools-list{
@@ -425,28 +438,41 @@ Projects section
         @extend .expierience-section__red-text;
     }
 
+    &__projects-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
 }
 .projects-container {
     width: $section-width-mobile;
+    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
 
     text-align: center;
+
+    @media only screen and (min-width: $layout-brakepoint) {
+        width: 95%;
+        max-width: $section-width-desktop-max * 1.5;
+    }
 }
 .project-tile {
     padding-top: $separator-position;
 
+    @media only screen and (min-width: $layout-brakepoint) {
+        max-width: 35rem;
+    }
     &--bottom-separator{
         $separator-height: .05em;
 
-        //margin-bottom: 1em;
         padding-bottom: $separator-position;
-        border-bottom: $separator-height solid $separator-color;
-
     }
 
     &__project-image {
         width: 100%;
+        max-width: 40rem;
     }
 
     &__container {
@@ -545,6 +571,18 @@ Projects section
         height: $corner-height;
     }
 
+    &>div {
+            width: $section-width-mobile;
+            max-width: 50rem;
+            margin-left: auto;
+            margin-right: auto;
+
+            @media only screen and (min-width: $layout-brakepoint) {
+                width: $section-width-desktop;
+                max-width: $section-width-desktop-max*.7;
+            }
+        }
+
     &__header {
         @extend .expierience-section__header;
 
@@ -557,11 +595,7 @@ Projects section
         @extend .expierience-section__red-text;
     }
 
-    &>div {
-        width: $section-width-mobile;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    
 
     $input-height: 2em;
     // Calculation to move label to edge of input. 

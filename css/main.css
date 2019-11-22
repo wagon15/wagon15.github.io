@@ -15,6 +15,12 @@ body {
   color: #212529;
 }
 
+@media only screen and (min-width: 50rem) {
+  body {
+    font-size: 200%;
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -223,7 +229,7 @@ Landing section
           animation: scroll 2s ease-out infinite forwards;
 }
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 50rem) {
   .landing-section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -231,7 +237,7 @@ Landing section
         -ms-flex-direction: row;
             flex-direction: row;
     width: 70%;
-    max-width: 80rem;
+    max-width: 90rem;
   }
   .landing-section__description {
     -webkit-box-ordinal-group: 2;
@@ -269,7 +275,7 @@ Nav bar section
   position: sticky;
   top: -0.2rem;
   z-index: 1;
-  height: 3em;
+  height: 2em;
   font-weight: bold;
   font-size: 1.4em;
   color: #ffffff;
@@ -281,6 +287,12 @@ Nav bar section
           box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.5);
   border-top: 0.2rem solid #ffffff;
   border-bottom: 0.2rem solid #ffffff;
+}
+
+@media only screen and (min-width: 50rem) {
+  .nav-bar {
+    font-size: 1.2em;
+  }
 }
 
 .nav-bar__container {
@@ -301,7 +313,7 @@ Nav bar section
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 3em;
+  height: 2em;
   max-width: 150rem;
   margin-left: auto;
   margin-right: auto;
@@ -333,7 +345,7 @@ Nav bar section
   border-color: #fdcc52;
 }
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 50rem) {
   .nav-bar__btn-primary {
     display: none;
   }
@@ -341,7 +353,7 @@ Nav bar section
 
 .nav-bar__links {
   position: absolute;
-  top: 3em;
+  top: 2em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -394,7 +406,7 @@ Nav bar section
   color: #fdcc52;
 }
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 50rem) {
   .nav-bar__links {
     -webkit-transform: scaleY(1);
         -ms-transform: scaleY(1);
@@ -436,6 +448,13 @@ Expierience section
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (min-width: 50rem) {
+  .expierience-section > div {
+    width: 70%;
+    max-width: 90rem;
+  }
 }
 
 .expierience-section__header, .projects-section__header, .contact-section__header {
@@ -510,24 +529,54 @@ Projects section
   padding-top: 0;
 }
 
+.projects-section__projects-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 .projects-container {
   width: 85%;
+  max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+@media only screen and (min-width: 50rem) {
+  .projects-container {
+    width: 95%;
+    max-width: 135rem;
+  }
 }
 
 .project-tile {
   padding-top: 2em;
 }
 
+@media only screen and (min-width: 50rem) {
+  .project-tile {
+    max-width: 35rem;
+  }
+}
+
 .project-tile--bottom-separator {
   padding-bottom: 2em;
-  border-bottom: 0.05em solid #dc243080;
 }
 
 .project-tile__project-image {
   width: 100%;
+  max-width: 40rem;
 }
 
 .project-tile__container {
@@ -676,8 +725,16 @@ Projects section
 
 .contact-section > div {
   width: 85%;
+  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (min-width: 50rem) {
+  .contact-section > div {
+    width: 70%;
+    max-width: 63rem;
+  }
 }
 
 .contact-section__input-container {
