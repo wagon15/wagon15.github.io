@@ -716,6 +716,19 @@ Projects section
         }
     }
 
+    &__confirmation {
+        background-color: #458B00;
+        border-radius: 2em;
+        line-height: 2em;
+        font-weight: bold;
+        color: $text-primary;
+    }
+
+    &__error {
+        @extend .contact-section__confirmation;
+        background-color: #8b0000;
+    }
+
     @media only screen and (min-width: $layout-brakepoint) {
         padding-top: $corner-height*1.5;
 

@@ -873,6 +873,18 @@ Projects section
   color: #fdcc52;
 }
 
+.contact-section__confirmation, .contact-section__error {
+  background-color: #458B00;
+  border-radius: 2em;
+  line-height: 2em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.contact-section__error {
+  background-color: #8b0000;
+}
+
 @media only screen and (min-width: 50rem) {
   .contact-section {
     padding-top: 150px;
