@@ -472,14 +472,6 @@ Expierience section
   margin-bottom: 0;
 }
 
-.expierience-section__corner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-}
-
 .tools-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -525,6 +517,14 @@ Projects section
   width: 100%;
 }
 
+.projects-section__corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
 .projects-section__header--no-top-padding, .contact-section__header--no-top-padding {
   padding-top: 0;
 }
@@ -543,6 +543,15 @@ Projects section
   -webkit-justify-content: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 50rem) {
+  .projects-section {
+    padding-top: 150px;
+  }
+  .projects-section__corner {
+    height: 150px;
+  }
 }
 
 .projects-container {
@@ -862,6 +871,15 @@ Projects section
 .contact-section__btn-primary:hover, .contact-section__btn-primary:active {
   background-color: #dc2430;
   color: #fdcc52;
+}
+
+@media only screen and (min-width: 50rem) {
+  .contact-section {
+    padding-top: 150px;
+  }
+  .contact-section__corner {
+    height: 150px;
+  }
 }
 
 .footer {
