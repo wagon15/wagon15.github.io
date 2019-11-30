@@ -1,11 +1,21 @@
-# portfolio
-Personal portfolio webpage prepared to showcase abilities and present myself to potencial employers.
+# Portfolio website
+
+Personal portfolio web page prepared to showcase abilities and present myself to potential employers.
+Page is based on single page layout.
 
 Project done with use of:
-* HTML
-* CSS
 * JS
+* CSS
+* HTML
 
 In build process additionally used technologies:
 * Sass - for easier BEM approach utilization in CSS files
-* ~~Gulp - for task automatization~~
+* ~~Gulp - for task automation~~
+* EmailJS - service allowing for email sending via SDK
+
+## Access
+
+Master branch of project page is available under link [my portfolio]()
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
