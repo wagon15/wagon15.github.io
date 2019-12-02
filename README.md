@@ -15,7 +15,7 @@ In build process additionally used technologies:
 
 ## Access
 
-Master branch of project page is available under link [my portfolio]()
+Master branch of project page is available under link [my portfolio](https://wojciechpeciak.github.io/)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
